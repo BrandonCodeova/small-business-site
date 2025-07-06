@@ -1,6 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color:#fdfdfd;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #e10600;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #e10600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #e10600;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Main content */
+main {
+    padding: 40px;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
+    padding: 50px;
+    border-left: 5px solid #e10600;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 40px;
+    transition: transform 0.2s ease-out;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #e10600;
+    text-shadow: 1px 1px 5px #000;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    background-color: #e10600;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.hero button:hover {
+    background-color: #ff2e2e;
+    transform: scale(1.05);
+}
+
+/* Services section */
+#services {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #1f1f1f;
+    padding: 20px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    text-align: center;
+    border-left: 4px solid #e10600;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    cursor: default;
+}
+
+.service:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 12px 30px rgba(255, 0, 0, 0.3);
+}
+
+.service h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+/* Optional subtle text */
+.service p:hover {
+    color: #ffcc00;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 30px 40px;
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+    text-align: center;
+    border-top: 2px solid #e10600;
+    margin-top: 60px;
 }
